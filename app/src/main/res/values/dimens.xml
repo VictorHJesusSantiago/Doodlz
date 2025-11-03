@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="default_line_width">5dp</dimen>
+    <dimen name="max_line_width">30dp</dimen>
+    <dimen name="padding">16dp</dimen>
+</resources>

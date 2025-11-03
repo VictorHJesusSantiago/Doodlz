@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Doodlz</string>
+    <string name="clear_prompt">Deseja apagar o doodle atual?</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="choose_color">Escolha uma cor</string>
+    <string name="choose_line_width">Escolha a espessura da linha</string>
+    <string name="width">Espessura:</string>
+    <string name="save_error">Erro ao salvar imagem.</string>
+    <string name="save_success">Imagem salva com sucesso na galeria.</string>
+    <string name="print_error">Erro ao imprimir doodle.</string>
+</resources>
