@@ -1,1052 +1,890 @@
 <div align="center">
 
-<img src="https://cdn-icons-png.flaticon.com/512/1046/1046874.png" alt="Doodlz Logo" width="110" />
+**🌐 Choose Language / Selecione o Idioma / Elija el Idioma**
 
-# 🎨 Doodlz — Aplicativo de Desenho Android
-
-**Um aplicativo de desenho nativo para Android, escrito em Java, que funciona como**
-**uma tela de pintura digital com suporte a multi-toque, paleta de cores e salvamento de imagens.**
-
-<br>
-
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
-![Custom View](https://img.shields.io/badge/UI-Custom%20View-blueviolet?style=for-the-badge)
-![Gradle](https://img.shields.io/badge/Gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Completo_(Demo)-brightgreen?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
-
-<br>
-
-🌐 **Choose Language / Selecione o idioma / Elija el idioma**
-
-[![English](https://img.shields.io/badge/🇬🇧%20ENGLISH-README.MD-blue?style=for-the-badge)](README.md)
-[![Português](https://img.shields.io/badge/🇧🇷%20PORTUGU%C3%8AS-ATUAL-success?style=for-the-badge)](README_PT.md)
-[![Español](https://img.shields.io/badge/🇪🇸%20ESPA%C3%91OL-README__ES.MD-red?style=for-the-badge)](README_ES.md)
-
-<br>
-
-![Diagrams](https://img.shields.io/badge/Diagramas-Mermaid_UML-ff69b4?style=for-the-badge)
-![Docs](https://img.shields.io/badge/Docs-SRS_%7C_DFD_%7C_DER-orange?style=for-the-badge)
-![Platform](https://img.shields.io/badge/Plataforma-Android-success?style=for-the-badge)
+[![🇺🇸 English](https://img.shields.io/badge/🇺🇸%20English-README.md-005CA5?style=for-the-badge)](README.md)&nbsp;&nbsp;&nbsp;[![🇧🇷 Português](https://img.shields.io/badge/🇧🇷%20Português-Atual-009C3B?style=for-the-badge)](README_PT.md)&nbsp;&nbsp;&nbsp;[![🇪🇸 Español](https://img.shields.io/badge/🇪🇸%20Español-README__ES.md-C60B1E?style=for-the-badge)](README_ES.md)
 
 </div>
 
 ---
 
-## 📚 Tabela de Conteúdos
+<div align="center">
 
-| # | Seção |
-|:-:|:------|
-| 1 | [📖 Sobre o Projeto](#-sobre-o-projeto) |
-| 2 | [✨ Funcionalidades Principais](#-funcionalidades-principais) |
-| 3 | [🛠️ Pilha de Tecnologias](#️-pilha-de-tecnologias) |
-| 4 | [🔑 Destaques da Implementação](#-destaques-da-implementação) |
-| 5 | [📂 Estrutura do Repositório](#-estrutura-do-repositório) |
-| 6 | [🚀 Como Executar](#-como-executar) |
-| 7 | [📋 Documentação de Engenharia de Software](#-documentação-de-engenharia-de-software) |
-| 8 | [🤝 Como Contribuir](#-como-contribuir) |
-| 9 | [👨‍💻 Autor](#-autor) |
-| 10 | [📄 Licença](#-licença) |
+```
+██████╗  ██████╗  ██████╗ ██████╗ ██╗     ███████╗
+██╔══██╗██╔═══██╗██╔═══██╗██╔══██╗██║     ╚══███╔╝
+██║  ██║██║   ██║██║   ██║██║  ██║██║       ███╔╝
+██║  ██║██║   ██║██║   ██║██║  ██║██║      ███╔╝
+██████╔╝╚██████╔╝╚██████╔╝██████╔╝███████╗███████╗
+╚═════╝  ╚═════╝  ╚═════╝ ╚═════╝ ╚══════╝╚══════╝
+      Aplicativo Android de Desenho com o Dedo (Touch)
+```
+
+---
+
+[![Android](https://img.shields.io/badge/Android-SDK%2021--34-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://developer.android.com/)
+[![Java](https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/)
+[![Kotlin](https://img.shields.io/badge/Kotlin-Plugin%20Android-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)](https://kotlinlang.org/)
+[![Gradle](https://img.shields.io/badge/Gradle-Kotlin%20DSL-02303A?style=for-the-badge&logo=gradle&logoColor=white)](https://gradle.org/)
+[![Canvas](https://img.shields.io/badge/Renderização-Canvas%20%2B%20Path-FF6B35?style=for-the-badge)]()
+[![Licença](https://img.shields.io/badge/Licença-Educacional-8B5CF6?style=for-the-badge)]()
+[![Status](https://img.shields.io/badge/Status-Estável-10B981?style=for-the-badge&logo=checkmarx&logoColor=white)]()
+
+<br/>
+
+> **Um aplicativo Android de desenho com o dedo, com um canvas customizado baseado em `View`**
+> que registra cada traço como um caminho vetorial, colore, salva, imprime e limpa a tela ao chacoalhar o aparelho.
+
+<br/>
+
+![Fragments](https://img.shields.io/badge/Fragments-4-3DDC84?style=flat-square)
+![Classes Java](https://img.shields.io/badge/Classes%20Java-8-10B981?style=flat-square)
+![SDK Mínimo](https://img.shields.io/badge/SDK%20Mínimo-21%20(Lollipop)-FF6B35?style=flat-square)
+![Sensores](https://img.shields.io/badge/Sensores-Acelerômetro-8B5CF6?style=flat-square)
+![Paleta](https://img.shields.io/badge/Cores%20Predefinidas-10-FCC624?style=flat-square)
+
+</div>
+
+---
+
+## 📑 Índice
 
 <details>
-<summary>📋 Ir direto para o índice da Documentação de Engenharia de Software (35 artefatos)</summary>
+<summary>▶️ <strong>Clique para expandir / recolher esta seção</strong></summary>
 
-**Requisitos**
-- [✅ Requisitos Funcionais (RF)](#-requisitos-funcionais-rf)
-- [⚙️ Requisitos Não Funcionais (RNF)](#️-requisitos-não-funcionais-rnf)
-- [📏 Regras de Negócio (RN)](#-regras-de-negócio-rn)
-- [🌐 Requisitos de Domínio](#-requisitos-de-domínio)
-- [💾 Requisitos de Dados](#-requisitos-de-dados)
-- [🖥️ Requisitos de Interface](#️-requisitos-de-interface)
-- [🎯 Casos de Uso](#-casos-de-uso)
-- [🔗 Matriz de Rastreabilidade de Requisitos](#-matriz-de-rastreabilidade-de-requisitos)
-- [📄 Documento de Especificação de Requisitos de Software (SRS)](#-documento-de-especificação-de-requisitos-de-software-srs)
+<table>
+<tr>
+<td valign="top" width="50%">
 
-**Diagramas UML**
-- [🧩 Diagrama de Casos de Uso](#-diagrama-de-casos-de-uso)
-- [🏗️ Diagrama de Classes](#️-diagrama-de-classes)
-- [📦 Diagrama de Objetos](#-diagrama-de-objetos)
-- [🔁 Diagrama de Sequência](#-diagrama-de-sequência)
-- [💬 Diagrama de Comunicação](#-diagrama-de-comunicação)
-- [🏃 Diagrama de Atividades](#-diagrama-de-atividades)
-- [🔄 Diagrama de Máquina de Estados](#-diagrama-de-máquina-de-estados)
-- [🧱 Diagrama de Componentes](#-diagrama-de-componentes)
-- [🚢 Diagrama de Implantação](#-diagrama-de-implantação)
-- [📦 Diagrama de Pacotes](#-diagrama-de-pacotes-1)
-- [🧬 Diagrama de Estrutura Composta](#-diagrama-de-estrutura-composta)
-- [🗺️ Diagrama de Visão Geral de Interação](#️-diagrama-de-visão-geral-de-interação)
-- [⏱️ Diagrama de Tempo (Timing)](#️-diagrama-de-tempo-timing)
+**🏗️ Sistema**
+- [Visão Geral](#-visão-geral)
+- [Arquitetura do Sistema](#️-arquitetura-do-sistema)
+- [Stack Tecnológica](#️-stack-tecnológica)
+- [Padrões de Projeto](#-padrões-de-projeto-aplicados)
+- [Estrutura do Projeto](#-estrutura-do-projeto)
 
-**Modelo de Dados**
-- [🗄️ Diagrama Entidade-Relacionamento (DER)](#️-diagrama-entidade-relacionamento-der)
-- [💡 Modelo Conceitual de Dados](#-modelo-conceitual-de-dados)
-- [🧮 Modelo Lógico de Dados](#-modelo-lógico-de-dados)
-- [⚙️ Modelo Físico de Dados](#️-modelo-físico-de-dados-1)
-- [📖 Dicionário de Dados](#-dicionário-de-dados)
-- [🔀 Diagrama de Fluxo de Dados (DFD)](#-diagrama-de-fluxo-de-dados-dfd)
-- [🧵 Diagrama de Linhagem de Dados](#-diagrama-de-linhagem-de-dados)
+**📦 Módulos**
+- [MainActivity — Host](#️-mainactivity--host-de-fragments)
+- [DoodleFragment — Controlador](#-doodlefragment--controlador-de-desenho)
+- [DoodleView — Motor do Canvas](#️-doodleview--motor-do-canvas)
+- [ColorDialogFragment](#-colordialogfragment--seletor-de-paleta)
+- [LineWidthDialogFragment](#-linewidthdialogfragment--ajuste-de-espessura)
+- [EraseImageDialogFragment](#-eraseimagedialogfragment--porta-de-confirmação)
+- [SensorEventListenerHelper](#-sensoreventlistenerhelper--detector-de-chacoalhada)
 
-**Arquitetura & UX**
-- [🏛️ Diagrama de Arquitetura (Visão Geral)](#️-diagrama-de-arquitetura-visão-geral)
-- [🔀 Fluxograma](#-fluxograma)
-- [🙋 Persona](#-persona)
-- [🧭 Mapa de Jornada do Usuário](#-mapa-de-jornada-do-usuário)
-- [📐 Wireframe](#-wireframe)
-- [🖼️ Mockup](#️-mockup)
+</td>
+<td valign="top" width="50%">
+
+**💼 Negócio**
+- [Regras de Negócio](#-regras-de-negócio)
+- [Requisitos Funcionais](#-requisitos-funcionais)
+- [Requisitos Não Funcionais](#-requisitos-não-funcionais)
+
+**📐 Design**
+- [Modelo de Dados](#️-modelo-de-dados)
+- [Fluxos do Sistema](#-fluxos-do-sistema)
+- [Fluxo de Captura de Traço](#fluxo-de-captura-de-traço)
+- [Fluxo de Salvamento](#fluxo-de-salvamento)
+- [Fluxo de Limpeza por Chacoalhada](#fluxo-de-limpeza-por-chacoalhada)
+
+**🔐 Segurança & Operação**
+- [Segurança](#-segurança)
+- [Instalação & Execução](#-instalação--execução)
+- [Testes Automatizados](#-testes-automatizados)
+- [Métricas & Monitoramento](#-métricas--monitoramento)
+- [Limitações Conhecidas](#️-limitações-conhecidas)
+
+</td>
+</tr>
+</table>
+
+---
 
 </details>
 
----
+## 🌟 Visão Geral
 
-## 📖 Sobre o Projeto
+<details>
+<summary>▶️ <strong>Clique para expandir / recolher esta seção</strong></summary>
 
-> **Doodlz** é uma aplicação de desenho nativa para Android que transforma a tela do dispositivo em uma **tela de pintura digital** totalmente interativa.
+**Doodlz** é um aplicativo Android nativo de desenho com o dedo, escrito em Java. Ele desenha através de uma subclasse de `View` feita à mão — `DoodleView` — que rastreia cada gesto de toque como um `Path` do Android, junto de uma cópia do `Paint` vigente no momento em que o traço começou. O resultado é uma superfície de desenho vetorial: mudanças de cor e espessura afetam apenas os traços desenhados *depois* da mudança, nunca os traços já presentes no canvas.
 
-O coração do projeto é uma **View personalizada** (`DoodleView`) que captura e renderiza os movimentos dos dedos em tempo real, com suporte completo a **multi-toque** — permitindo desenhar com vários dedos simultaneamente.
+O aplicativo é uma única `Activity` que hospeda um único `Fragment` principal (`DoodleFragment`), o qual por sua vez abre três `DialogFragment`s modais para seleção de cor, ajuste de espessura de linha e confirmação de apagar. Um `SensorEventListenerHelper` singleton escuta o acelerômetro do aparelho e dispara uma limpeza completa do canvas ao detectar uma chacoalhada, a menos que haja um diálogo na tela no momento.
 
-Além da experiência de desenho, o app inclui um menu de ferramentas completo e integração direta com o **hardware do dispositivo**: basta agitar o celular para limpar a tela, utilizando o acelerômetro nativo do Android.
+Salvar grava o bitmap composto na pasta pública da galeria `Pictures/Doodlz` através da API `MediaStore` com armazenamento escopado, e imprimir entrega o mesmo bitmap ao `PrintHelper` do Android para o diálogo de impressão do sistema.
 
----
+### 🎯 Objetivos do Sistema
 
-## ✨ Funcionalidades Principais
-
-| Ícone | Funcionalidade | Descrição |
-|:-----:|:---------------|:----------|
-| ✍️ | **Desenho Multi-Touch** | Desenhe com vários dedos ao mesmo tempo. Cada toque é rastreado com um `Path` individual e independente. |
-| 🎨 | **Seletor de Cores** | `ColorDialogFragment` com `RecyclerView` exibindo uma paleta de cores completa para o pincel. |
-| 〰️ | **Seletor de Espessura** | `LineWidthDialogFragment` com `SeekBar` para ajuste preciso da espessura da linha em tempo real. |
-| 💾 | **Salvar Desenho** | Salva a imagem atual diretamente na galeria do dispositivo via `MediaStore`. |
-| 🖨️ | **Imprimir** | Envia o desenho para o serviço de impressão nativo do Android. |
-| 🗑️ | **Apagar com Confirmação** | `EraseImageDialogFragment` solicita confirmação antes de limpar a tela para evitar perdas acidentais. |
-| 📳 | **Apagar ao Agitar** | Usa o **Acelerômetro** (`Sensor.TYPE_ACCELEROMETER`) para detectar o gesto de "shake" e apagar automaticamente. |
-
----
-
-## 🛠️ Pilha de Tecnologias
-
-| Tecnologia | Função no Projeto |
-|:-----------|:------------------|
-| **Java** | Linguagem principal de toda a lógica do aplicativo. |
-| **Android SDK** | Framework nativo para desenvolvimento Android. |
-| **Arquitetura Fragmentos + Atividade Única** | `MainActivity` hospeda o `DoodleFragment` como controlador principal. |
-| **Custom View (`DoodleView`)** | View personalizada que contém todo o motor de desenho 2D. |
-| **Bitmap / Canvas / Paint / Path** | APIs nativas de gráficos 2D do Android para renderização dos traços. |
-| **SensorManager** | Acesso ao Acelerômetro para detecção do gesto de agitar. |
-| **MediaStore** | API do Android para salvar imagens na galeria do dispositivo. |
-| **AndroidManifest.xml** | Declaração de permissões (`WRITE_EXTERNAL_STORAGE`) e configuração do app. |
-| **Gradle (Kotlin DSL)** | Sistema de build e gestão de dependências do projeto. |
+| Objetivo | Descrição |
+|----------|-----------|
+| ✏️ **Desenho livre** | Capturar gestos de toque contínuos como caminhos vetoriais suaves e com anti-aliasing |
+| 🎨 **Seleção de cor** | Oferecer uma paleta de 10 cores através de um diálogo seletor em grade |
+| 📏 **Controle de espessura** | Ajustar a espessura da linha ao vivo via `SeekBar`, com retorno visual imediato |
+| 🧹 **Limpeza por chacoalhada** | Detectar uma chacoalhada física via acelerômetro e limpar o canvas após confirmação |
+| 💾 **Exportação para a galeria** | Salvar o desenho finalizado como PNG na pasta pública Pictures do aparelho |
+| 🖨️ **Impressão** | Enviar o desenho para qualquer serviço de impressão registrado no sistema |
+| 🔐 **Permissões em runtime** | Solicitar permissões de armazenamento apenas na faixa legada de API que ainda as exige |
+| 🎭 **Edição não destrutiva** | Preservar a cor e a espessura dos traços já desenhados quando as configurações ativas da ferramenta mudam |
 
 ---
 
-## 🔑 Destaques da Implementação
+</details>
 
-### 🖌️ DoodleView.java — A Tela de Pintura Multi-Touch
+## 🏗️ Arquitetura do Sistema
 
-> O núcleo de todo o projeto. `DoodleView` é uma `View` personalizada que gerencia toda a lógica de desenho em tempo real.
+<details>
+<summary>▶️ <strong>Clique para expandir / recolher esta seção</strong></summary>
 
-| Componente | Tipo | Responsabilidade |
-|:-----------|:----:|:-----------------|
-| `bitmap` | `Bitmap` | Tela de fundo onde os traços são persistidos entre redesenhos. |
-| `bitmapCanvas` | `Canvas` | Canvas associado ao `Bitmap`, onde o `Paint` efetivamente desenha. |
-| `pathMap` | `HashMap<Integer, Path>` | Armazena o traço (`Path`) de cada dedo, identificado pelo `pointerId`. |
-| `previousPointMap` | `HashMap<Integer, Point>` | Guarda o ponto anterior de cada dedo para gerar linhas suaves e contínuas. |
+### Diagrama de Módulos
 
-**Eventos de toque processados pelo `onTouchEvent`:**
+```mermaid
+flowchart TB
+    subgraph UI["🖥️  CAMADA DE INTERFACE"]
+        direction LR
+        MAIN["🪟 activity_main.xml\n─────────────\nFragmentContainerView\nhospeda DoodleFragment"]
+        FRAGXML["🎨 fragment_doodle.xml\n─────────────\ncanvas DoodleView\nbotões cor/espessura/limpar/salvar/imprimir"]
+    end
 
-```java
-// Cada evento é tratado individualmente para suportar múltiplos dedos
-switch (action) {
-    case MotionEvent.ACTION_DOWN:        // Primeiro dedo toca a tela
-    case MotionEvent.ACTION_POINTER_DOWN: // Dedo adicional toca a tela
-    case MotionEvent.ACTION_MOVE:        // Qualquer dedo se move
-    case MotionEvent.ACTION_UP:          // Último dedo sai da tela
-    case MotionEvent.ACTION_POINTER_UP:  // Um dedo adicional sai da tela
-}
+    subgraph HOST["🏛️  HOST"]
+        MAINACT["MainActivity.java\n─────────────────────\napenas setContentView\nsem lógica de negócio"]
+    end
+
+    subgraph CTRL["🎮  CONTROLADOR"]
+        DF["DoodleFragment.java\n─────────────────────\n• Conexão dos botões\n• Tratamento de permissão (API ≤ 28)\n• Salvar via MediaStore\n• Imprimir via PrintHelper\n• Callback de chacoalhada"]
+    end
+
+    subgraph DIALOGS["💬  DIÁLOGOS MODAIS"]
+        direction TB
+        CD["🎨 ColorDialogFragment\n────────────\nGrade RecyclerView\n10 cores predefinidas"]
+        LW["📏 LineWidthDialogFragment\n────────────\nSeekBar\npreview de espessura ao vivo"]
+        ED["🧹 EraseImageDialogFragment\n────────────\nConfirmação Sim/Não"]
+    end
+
+    subgraph ENGINE["⚙️  MOTOR DE DESENHO"]
+        DV["DoodleView.java\n─────────────────────\n• onTouchEvent → construção de Path\n• Histórico List&lt;Stroke&gt;\n• onDraw → reproduz todos os traços\n• Snapshot em Bitmap para salvar/imprimir"]
+        STROKE["Stroke\n────────────\npar Path + Paint\nimutável após confirmado"]
+    end
+
+    subgraph SENSOR["📳  SENSOR"]
+        SH["SensorEventListenerHelper\n─────────────\nSingleton\nAcelerômetro\nSHAKE_THRESHOLD = 15f"]
+    end
+
+    subgraph OUT["💾  SAÍDA"]
+        MSTORE[("🗄️ MediaStore\nPictures/Doodlz/*.png")]
+        PRINT["🖨️ Android PrintHelper\ndiálogo de impressão do sistema"]
+    end
+
+    MAIN --> MAINACT --> DF
+    FRAGXML -.->|"inflado por"| DF
+    DF -->|"abre"| CD & LW & ED
+    CD -->|"changeColor()"| DF
+    LW -->|"changeLineWidth()"| DF
+    ED -->|"eraseDrawing()"| DF
+    DF <-->|"setColor/setStrokeWidth/clear"| DV
+    DV --> STROKE
+    SH -->|"callback onShake()"| DF
+    DF -->|"clear() se não houver diálogo"| DV
+    DF -->|"getBitmap()"| DV
+    DV -->|"comprime PNG"| MSTORE
+    DV -->|"printBitmap"| PRINT
+
+    style UI fill:#1e3a5f,color:#fff,stroke:#4a90d9
+    style HOST fill:#1a3a1a,color:#fff,stroke:#4caf50
+    style CTRL fill:#3a1a1a,color:#fff,stroke:#e57373
+    style DIALOGS fill:#3a2a1a,color:#fff,stroke:#ffb74d
+    style ENGINE fill:#2a1a3a,color:#fff,stroke:#ce93d8
+    style SENSOR fill:#1a2a3a,color:#fff,stroke:#64b5f6
+    style OUT fill:#3a1a2a,color:#fff,stroke:#f06292
+```
+
+### Camadas da Arquitetura
+
+```mermaid
+flowchart LR
+    subgraph L1["🖥️ Apresentação"]
+        A1["Layouts XML"]
+        A2["3 Dialog Fragments"]
+    end
+    subgraph L2["🎮 Controlador"]
+        B1["DoodleFragment\nOrquestração + I/O"]
+    end
+    subgraph L3["⚙️ Motor"]
+        C1["DoodleView\nModelo Path + Stroke"]
+    end
+    subgraph L4["💾 Serviços do Sistema"]
+        D1["MediaStore"]
+        D2["PrintHelper"]
+        D3["SensorManager"]
+    end
+
+    L1 --> L2 --> L3 --> L4
+
+    style L1 fill:#1565C0,color:#fff
+    style L2 fill:#2E7D32,color:#fff
+    style L3 fill:#6A1B9A,color:#fff
+    style L4 fill:#BF360C,color:#fff
 ```
 
 ---
 
-### 📳 SensorEventListenerHelper.java — Apagar ao Agitar
+</details>
 
-> Esta classe encapsula toda a lógica do acelerômetro, mantendo o `DoodleFragment` limpo e com responsabilidade única.
+## 🛠️ Stack Tecnológica
 
-```java
-// Lógica de detecção do gesto de "shake"
-float acceleration = /* cálculo da aceleração resultante */;
+<details>
+<summary>▶️ <strong>Clique para expandir / recolher esta seção</strong></summary>
 
-if (acceleration > SHAKE_THRESHOLD) {
-    // Invoca eraseImage() no DoodleFragment
-    doodleFragment.eraseImage();
-}
-```
-
-| Item | Detalhe |
-|:-----|:--------|
-| **Sensor utilizado** | `Sensor.TYPE_ACCELEROMETER` |
-| **Threshold** | Constante `SHAKE_THRESHOLD` — define a sensibilidade do gesto. |
-| **Ação disparada** | Chama `eraseImage()` no `DoodleFragment` quando o threshold é excedido. |
+<table>
+<thead>
+<tr>
+<th>Camada</th>
+<th>Tecnologia</th>
+<th>Versão</th>
+<th>Finalidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="2"><strong>🧠 Linguagem</strong></td>
+<td>Java</td>
+<td>17</td>
+<td>Toda a lógica da aplicação — 8 classes</td>
+</tr>
+<tr>
+<td>Plugin Kotlin Android</td>
+<td>aplicado, não usado diretamente</td>
+<td>Declarado por compatibilidade com dependências AndroidX KTX</td>
+</tr>
+<tr>
+<td rowspan="3"><strong>🤖 Plataforma</strong></td>
+<td>Android SDK</td>
+<td>compile/target 34</td>
+<td>Comportamento alvo do Android 14</td>
+</tr>
+<tr>
+<td>SDK Mínimo</td>
+<td>21</td>
+<td>Piso Android 5.0 Lollipop</td>
+</tr>
+<tr>
+<td>Fragments</td>
+<td>AndroidX</td>
+<td>`Fragment` + `DialogFragment`, baseados no child fragment manager</td>
+</tr>
+<tr>
+<td rowspan="3"><strong>🎨 Gráficos</strong></td>
+<td>Canvas / Path / Paint</td>
+<td>Android Graphics</td>
+<td>Renderização de traço vetorial à mão livre</td>
+</tr>
+<tr>
+<td>Bitmap</td>
+<td>ARGB_8888</td>
+<td>Snapshot raster composto para salvar/imprimir</td>
+</tr>
+<tr>
+<td>RecyclerView + GridLayoutManager</td>
+<td>AndroidX</td>
+<td>Grade de 5 colunas com as amostras de cor</td>
+</tr>
+<tr>
+<td rowspan="2"><strong>💾 Armazenamento</strong></td>
+<td>MediaStore</td>
+<td>Images.Media</td>
+<td>Inserção em `Pictures/Doodlz` com armazenamento escopado |
+</tr>
+<tr>
+<td>Permissões legadas</td>
+<td>API ≤ 28</td>
+<td>`WRITE_EXTERNAL_STORAGE` / `READ_EXTERNAL_STORAGE` via Activity Result API</td>
+</tr>
+<tr>
+<td><strong>🖨️ Impressão</strong></td>
+<td>androidx.print.PrintHelper</td>
+<td>1.0.0</td>
+<td>Entrega o bitmap a qualquer serviço de impressão do sistema</td>
+</tr>
+<tr>
+<td><strong>📳 Sensores</strong></td>
+<td>SensorManager / Acelerômetro</td>
+<td>Android Hardware</td>
+<td>Detecção de chacoalhada por verificação de magnitude com limiar</td>
+</tr>
+<tr>
+<td rowspan="2"><strong>🧪 Testes</strong></td>
+<td>JUnit</td>
+<td>4.13.2</td>
+<td>Testes unitários locais (`src/test`)</td>
+</tr>
+<tr>
+<td>Espresso + AndroidX Test</td>
+<td>3.5.1 / 1.1.5</td>
+<td>Testes instrumentados (`src/androidTest`)</td>
+</tr>
+<tr>
+<td><strong>🔧 Build</strong></td>
+<td>Gradle</td>
+<td>Kotlin DSL</td>
+<td>`build.gradle.kts` por módulo, stdlib Kotlin fixada em 1.8.20</td>
+</tr>
+</tbody>
+</table>
 
 ---
 
-## 📂 Estrutura do Repositório
+</details>
 
-```plaintext
-doodlz/
+## 🎨 Padrões de Projeto Aplicados
+
+<details>
+<summary>▶️ <strong>Clique para expandir / recolher esta seção</strong></summary>
+
+| Padrão | Onde | Justificativa |
+|--------|------|----------------|
+| 🧭 **Divisão estilo MVC** | `DoodleView` (modelo+view dos traços) vs. `DoodleFragment` (controlador: I/O, diálogos, permissões) | O estado de desenho fica dentro da view customizada; a orquestração fica no fragment |
+| 🎯 **Snapshot tipo Command** | `Stroke(Path, Paint)` — cada traço copia o `Paint` vigente no momento de sua criação | Mudanças posteriores de cor/espessura não podem alterar retroativamente traços já confirmados |
+| 🔂 **Singleton** | `SensorEventListenerHelper.getInstance(context)` | Um único listener de acelerômetro compartilhado entre os eventos do ciclo de vida do fragment, evitando registro duplicado |
+| 👂 **Observer / Callback** | Interface `ShakeListener`, `SeekBar.OnSeekBarChangeListener`, listeners de clique | Desacopla o sensor e os diálogos do fragment que consome seus eventos |
+| 🚦 **Flag de Guarda** | Booleano `dialogOnScreen` em `DoodleFragment` | Impede que uma chacoalhada limpe o canvas enquanto um diálogo modal já está aberto |
+| 🏭 **Padrão Adapter** | `ColorAdapter` + `ColorViewHolder` | Par padrão adapter/view-holder do RecyclerView para a grade de cores |
+| 🔀 **Strategy (ramificação em runtime)** | Verificação `Build.VERSION.SDK_INT <= Build.VERSION_CODES.P` | Permissão de armazenamento legada solicitada apenas onde a plataforma ainda a exige |
+| 🧱 **Renderização por Replay** | `DoodleView.onDraw` itera `List<Stroke>` a cada quadro | O canvas é sempre reconstruído a partir do histórico autoritativo de traços, nunca mutado no lugar |
+
+---
+
+</details>
+
+## 📁 Estrutura do Projeto
+
+<details>
+<summary>▶️ <strong>Clique para expandir / recolher esta seção</strong></summary>
+
+```
+Doodlz/
 │
-├── 📄 build.gradle.kts                        # ⚙️  Configurações do projeto (nível raiz)
+├── 📄 build.gradle.kts                  # Script de build raiz
+├── 📄 settings.gradle.kts               # Inclusão de módulos
+├── 📄 gradle.properties                 # Argumentos da JVM, flags AndroidX
+├── 📄 local.properties                  # Caminho local do SDK (não versionado)
+├── 📄 gradlew / gradlew.bat             # Lançadores do Gradle Wrapper
 │
-└── 📁 app/
-    ├── 📄 build.gradle.kts                    # ⚙️  Configurações do módulo 'app'
+├── 📂 gradle/
+│   ├── 📄 libs.versions.toml            # Catálogo de versões
+│   └── 📂 wrapper/                      # gradle-wrapper.jar + properties
+│
+└── 📂 app/
+    ├── 📄 build.gradle.kts              # Níveis de SDK, dependências, stdlib Kotlin fixada
+    ├── 📄 proguard-rules.pro            # Regras de retenção R8/ProGuard
     │
-    └── 📁 src/main/
+    └── 📂 src/
+        ├── 📂 main/
+        │   ├── 📄 AndroidManifest.xml
+        │   ├── 📂 java/com/example/doodlz/
+        │   │   ├── 📄 MainActivity.java             # Host de Activity única
+        │   │   ├── 📄 DoodleFragment.java            # ★ Controlador — I/O, diálogos, permissões
+        │   │   ├── 📄 DoodleView.java                # ★ Motor do canvas — modelo Path/Stroke
+        │   │   ├── 📄 ColorDialogFragment.java       # Seletor de cores em grade
+        │   │   ├── 📄 ColorViewHolder.java           # Holder do RecyclerView para uma amostra
+        │   │   ├── 📄 LineWidthDialogFragment.java   # Seletor de espessura via SeekBar
+        │   │   ├── 📄 EraseImageDialogFragment.java  # Confirmação Sim/Não de apagar
+        │   │   └── 📄 SensorEventListenerHelper.java # Singleton detector de chacoalhada
+        │   └── 📂 res/
+        │       ├── 📂 layout/
+        │       │   ├── activity_main.xml
+        │       │   ├── fragment_doodle.xml
+        │       │   ├── fragment_color.xml
+        │       │   ├── fragment_line_width.xml
+        │       │   ├── fragment_erase_image.xml
+        │       │   └── item_color.xml
+        │       ├── 📂 drawable/                      # ic_print.xml, camadas do launcher
+        │       ├── 📂 mipmap-*dpi/                    # Ícones do launcher
+        │       ├── 📂 values/                          # colors, dimens, strings, themes
+        │       └── 📂 xml/                              # regras de backup e extração de dados
         │
-        ├── 📄 AndroidManifest.xml             # 🔐 Permissões e configuração do app
-        │
-        ├── 📁 java/com/example/doodlz/
-        │   ├── 📄 MainActivity.java           # 🏠 Atividade principal (Host)
-        │   ├── 📄 DoodleFragment.java         # 🎛️  Fragmento principal (Controlador)
-        │   ├── 📄 DoodleView.java             # 🖌️  Motor de desenho Multi-Touch ← CORE
-        │   ├── 📄 SensorEventListenerHelper.java # 📳 Lógica do Acelerômetro ← CORE
-        │   ├── 📄 ColorDialogFragment.java    # 🎨 Dialog de seleção de cor
-        │   ├── 📄 LineWidthDialogFragment.java # 〰️  Dialog de espessura da linha
-        │   └── 📄 EraseImageDialogFragment.java # 🗑️  Dialog de confirmação de apagar
-        │
-        └── 📁 res/
-            ├── 📁 layout/                     # 🖼️  Layouts XML das telas e dialogs
-            │   ├── 📄 activity_main.xml
-            │   ├── 📄 fragment_doodle.xml
-            │   ├── 📄 fragment_color.xml
-            │   └── 📄 fragment_line_width.xml
-            ├── 📁 drawable/                   # 🎭 Ícones e vetores do app
-            └── 📁 values/                     # 📝 Strings, Cores e Dimensões
+        ├── 📂 test/java/com/example/doodlz/
+        │   └── ExampleUnitTest.kt
+        └── 📂 androidTest/java/com/example/doodlz/
+            └── ExampleInstrumentedTest.kt
+│
+├── 📄 README.md                          # 🇺🇸 Inglês (principal)
+├── 📄 README_PT.md                       # 🇧🇷 Português
+└── 📄 README_ES.md                       # 🇪🇸 Espanhol
 ```
 
 ---
 
-## 🚀 Como Executar
+</details>
 
-### 📋 Pré-requisitos
+## 📦 Módulos do Sistema
 
-| Requisito | Detalhe |
-|:----------|:--------|
-| **Android Studio** | Versão **Hedgehog** ou superior, instalada e configurada. |
-| **JDK** | Versão **11 ou superior** (geralmente incluído no Android Studio). |
-| **Dispositivo ou Emulador** | Android físico (USB + depuração ativada) ou AVD configurado. |
+<details>
+<summary>▶️ <strong>Clique para expandir / recolher esta seção</strong></summary>
+
+### 🏛️ MainActivity — Host de Fragments
+
+Uma `AppCompatActivity` mínima cujo corpo inteiro é `setContentView(R.layout.activity_main)`. Toda a lógica vive a jusante, em `DoodleFragment`; a activity não carrega estado nem callbacks próprios.
 
 ---
 
-### 🔧 Passo a Passo
+### 🎮 DoodleFragment — Controlador de Desenho
 
-**1. Clone o repositório:**
+O centro de orquestração da aplicação, implementando `SensorEventListenerHelper.ShakeListener`.
 
-```bash
-git clone https://github.com/VictorHJesusSantiago/doodlz.git
-```
-
-**2. Abra no Android Studio:**
-
-```
-Android Studio → File → Open → Selecione a pasta 'doodlz'
-```
-
-**3. Sincronize o Gradle:**
-
-> O Android Studio detectará o projeto automaticamente. Aguarde a sincronização das dependências — o processo é rápido, pois o projeto não possui bibliotecas externas.
-
-```
-Build → Sync Project with Gradle Files
-```
-
-**4. Execute a aplicação:**
-
-```
-Run → Run 'app'  (ou clique no botão ▶️ na barra de ferramentas)
-```
+| Responsabilidade | Implementação |
+|-------------------|----------------|
+| Inflação da view | `onCreateView` infla `fragment_doodle.xml`, conecta `doodleView` e cinco botões |
+| Fluxo de permissão | `registerForActivityResult(RequestMultiplePermissions)`, solicitado apenas quando `SDK_INT <= P` |
+| Ciclo de vida do sensor | `onResume`/`onPause` iniciam/param o `SensorEventListenerHelper` compartilhado |
+| Abertura de diálogos | `openColorDialog`, `openLineWidthDialog`, `openEraseDialog` — cada um define `dialogOnScreen = true` |
+| Salvar | `saveImage()` — monta `ContentValues`, insere em `MediaStore.Images.Media`, transmite uma compressão PNG para a `Uri` retornada |
+| Imprimir | `printImage()` — entrega `doodleView.getBitmap()` ao `PrintHelper` |
+| Tratamento de chacoalhada | `onShake()` limpa o canvas apenas `if (!dialogOnScreen)` |
 
 ---
 
-### 📱 Testando Funcionalidades de Hardware
+### ⚙️ DoodleView — Motor do Canvas
 
-| Funcionalidade | Como Testar |
-|:---------------|:------------|
-| 🎨 **Desenho Multi-Touch** | Em dispositivo físico, use múltiplos dedos simultaneamente. |
-| 📳 **Apagar ao Agitar** | Agite o dispositivo físico. No emulador, use `Extended Controls → Virtual sensors`. |
-| 💾 **Salvar na Galeria** | Conceda a permissão `WRITE_EXTERNAL_STORAGE` quando solicitada. |
+Uma `View` customizada que é ao mesmo tempo a superfície de desenho e o modelo autoritativo de tudo que foi desenhado.
 
----
+| Elemento | Papel |
+|----------|-------|
+| `Stroke` (classe interna) | Par imutável de um `Path` e uma cópia defensiva do `Paint` ativo quando o traço começou |
+| `strokes: List<Stroke>` | Histórico completo do desenho, reproduzido em `onDraw` a cada quadro |
+| `currentPath` / `currentPaint` | O traço em andamento, renderizado sobre o histórico confirmado enquanto o dedo ainda está na tela |
+| `onTouchEvent` | `ACTION_DOWN` inicia um caminho, `ACTION_MOVE` o estende com `lineTo`, `ACTION_UP` o confirma em `strokes` |
+| `setColor` / `setStrokeWidth` | Alteram `drawPaint`, que é copiado para `currentPaint` no *próximo* `ACTION_DOWN` — nunca afeta traços já confirmados |
+| `clear()` | Esvazia `strokes` e chama `invalidate()` |
+| `getBitmap()` | Desenha a view sobre seu `Bitmap` de apoio e o retorna para salvar/imprimir |
 
-## 📋 Documentação de Engenharia de Software
-
-> Um conjunto condensado de artefatos de engenharia de software (requisitos, UML, modelo de dados e UX) descrevendo o Doodlz. Cada item abaixo é expansível — clique para visualizar.
-
-### 📝 Requisitos
-
-<details>
-<summary><b>✅ Requisitos Funcionais (RF)</b></summary>
-
-| ID | Requisito | Descrição | Prioridade |
-|:---|:------------|:-------------|:--------:|
-| RF01 | Desenho multi-touch | O app deve permitir desenhar com vários dedos simultaneamente, cada um rastreado como um `Path` independente. | Alta |
-| RF02 | Seleção de cor | O usuário deve poder escolher a cor do traço em um diálogo de paleta (`ColorDialogFragment`). | Alta |
-| RF03 | Ajuste de espessura da linha | O usuário deve poder ajustar a espessura do traço via `SeekBar` (`LineWidthDialogFragment`). | Média |
-| RF04 | Salvar imagem | O usuário deve poder salvar o desenho atual na galeria do dispositivo via `MediaStore`. | Alta |
-| RF05 | Imprimir imagem | O usuário deve poder enviar o desenho para uma impressora via framework de impressão do Android. | Baixa |
-| RF06 | Apagar com confirmação | O usuário deve poder limpar a tela, com um diálogo de confirmação para evitar perdas acidentais. | Alta |
-| RF07 | Apagar ao agitar | Agitar o dispositivo deve disparar o mesmo fluxo de confirmação de apagar via acelerômetro. | Média |
-
-</details>
-
-<details>
-<summary><b>⚙️ Requisitos Não Funcionais (RNF)</b></summary>
-
-| ID | Categoria | Requisito |
-|:---|:---------|:------------|
-| RNF01 | Desempenho | O desenho deve renderizar sem atraso perceptível — a tela é redesenhada via `invalidate()` em cada evento de movimento. |
-| RNF02 | Compatibilidade | O app deve rodar na faixa de API Android declarada em `build.gradle.kts` (minSdk/targetSdk). |
-| RNF03 | Usabilidade | Todas as ações destrutivas (apagar) exigem confirmação explícita do usuário antes de executar. |
-| RNF04 | Portabilidade | Os layouts devem se adaptar a celulares e tablets de tamanhos e orientações variados. |
-| RNF05 | Manutenibilidade | A lógica de desenho fica isolada em `DoodleView`; a lógica de sensores em `SensorEventListenerHelper` (responsabilidade única). |
-| RNF06 | Uso de recursos | O `Bitmap` em memória é mantido apenas na resolução da tela, evitando erros de falta de memória. |
-
-</details>
-
-<details>
-<summary><b>📏 Regras de Negócio (RN)</b></summary>
-
-- **RN01** — A cor padrão do traço é preta e a espessura padrão é uma constante predefinida até que o usuário a altere.
-- **RN02** — A tela só pode ser apagada após confirmação explícita (diálogo), seja acionada manualmente ou por agitação.
-- **RN03** — Salvar uma imagem requer permissão de armazenamento (`WRITE_EXTERNAL_STORAGE` em Android legado, armazenamento delimitado via `MediaStore` em versões modernas).
-- **RN04** — Cada dedo ativo (`pointerId`) possui exatamente um `Path` independente; ao levantar o dedo, sua entrada de rastreamento é finalizada e removida.
-- **RN05** — A impressão reutiliza o mesmo `Bitmap` usado para salvar — o que o usuário vê é exatamente o que é salvo/impresso (WYSIWYG).
-
-</details>
-
-<details>
-<summary><b>🌐 Requisitos de Domínio</b></summary>
-
-O domínio da aplicação é o **desenho digital raster em 2D**. Conceitos centrais do domínio:
-
-- **Canvas (Tela)** — a superfície de desenho (baseada em um `Bitmap`).
-- **Traço / Path** — uma linha contínua desenhada por um dedo.
-- **Pointer (Apontador)** — um único dedo/toque identificado por `pointerId`.
-- **Pincel** — combinação de `Color` (cor) + `Line Width` (espessura) aplicada via `Paint`.
-- **Gesto** — uma entrada de hardware reconhecida (agitar) mapeada para uma ação do domínio (apagar).
-
-**Restrição de domínio:** o modelo é restrito à saída raster 2D — não há persistência vetorial, camadas, nem histórico de desfazer/refazer.
-
-</details>
-
-<details>
-<summary><b>💾 Requisitos de Dados</b></summary>
-
-| Dado | Ciclo de vida | Localização |
-|:-----|:---------|:---------|
-| Objetos `Path` ativos (`pathMap`, `previousPointMap`) | Transiente (em memória, por sessão de toque) | Instância de `DoodleView` |
-| `Bitmap` do desenho | Vida útil da sessão (em memória) | Instância de `DoodleView` |
-| Imagem PNG exportada | Persistente | `MediaStore` / Galeria do dispositivo |
-| Cor / espessura atuais | Vida útil da sessão | Campos de `DoodleView` |
-
-O app **não possui banco de dados relacional nem backend remoto** — todo dado persistente é o asset de imagem exportado.
-
-</details>
-
-<details>
-<summary><b>🖥️ Requisitos de Interface</b></summary>
-
-| Tela | Componente | Requisito |
-|:-------|:----------|:------------|
-| Tela Principal de Desenho | `DoodleFragment` + `DoodleView` | Tela em tela cheia com menu de opções (Cor, Espessura, Apagar, Salvar, Imprimir). |
-| Diálogo de Cor | `ColorDialogFragment` | Paleta `RecyclerView` com pré-visualização do pincel em tempo real. |
-| Diálogo de Espessura | `LineWidthDialogFragment` | `SeekBar` com pré-visualização do pincel em tempo real. |
-| Diálogo de Confirmação de Apagar | `EraseImageDialogFragment` | Botões Sim / Cancelar; Cancelar não altera o estado. |
-
-Todos os diálogos são modais e não devem alterar o estado do app quando descartados via Cancelar/voltar.
-
-</details>
-
-<details>
-<summary><b>🎯 Casos de Uso</b></summary>
-
-| ID | Caso de Uso | Ator | Fluxo Principal |
-|:---|:---------|:------|:----------|
-| UC01 | Desenhar na Tela | Usuário | O usuário toca e arrasta na tela → `DoodleView` cria/atualiza um `Path` por dedo → a tela é redesenhada. |
-| UC02 | Selecionar Cor | Usuário | O usuário abre o menu → Cor → escolhe uma amostra → a cor do pincel é atualizada. |
-| UC03 | Ajustar Espessura | Usuário | O usuário abre o menu → Espessura → arrasta o `SeekBar` → a espessura do pincel é atualizada. |
-| UC04 | Salvar Imagem | Usuário | O usuário abre o menu → Salvar → o app grava o `Bitmap` no `MediaStore`. |
-| UC05 | Imprimir Imagem | Usuário | O usuário abre o menu → Imprimir → o diálogo de impressão do Android abre com o `Bitmap`. |
-| UC06 | Apagar Tela (manual) | Usuário | O usuário abre o menu → Apagar → confirma → a tela é limpa. |
-| UC07 | Apagar Tela (agitar) | Usuário | O usuário agita o dispositivo → o acelerômetro excede o limite → confirmação de apagar é exibida → confirma → a tela é limpa. |
-
-</details>
-
-<details>
-<summary><b>🔗 Matriz de Rastreabilidade de Requisitos</b></summary>
-
-| Requisito | Caso de Uso | Classe que Implementa | Verificação |
-|:------------|:---------|:--------------------|:--------------|
-| RF01 / RN04 | UC01 | `DoodleView.onTouchEvent` | Teste manual com múltiplos dedos no dispositivo |
-| RF02 | UC02 | `ColorDialogFragment` | Selecionar amostra, desenhar, confirmar cor aplicada |
-| RF03 | UC03 | `LineWidthDialogFragment` | Ajustar `SeekBar`, desenhar, confirmar espessura aplicada |
-| RF04 / RN05 | UC04 | `DoodleFragment.saveImage` | Salvar, verificar arquivo na galeria |
-| RF05 / RN05 | UC05 | `DoodleFragment.printImage` | Disparar impressão, verificar preview igual à tela |
-| RF06 / RN02 | UC06 | `EraseImageDialogFragment`, `DoodleView.clear` | Apagar via menu, confirmar tela limpa |
-| RF07 / RN02 | UC07 | `SensorEventListenerHelper` | Agitar dispositivo, confirmar exibição do diálogo |
-| RNF01 | UC01 | `DoodleView.onDraw` | Verificação visual de atraso durante o desenho |
-| RNF03 | UC06, UC07 | `EraseImageDialogFragment` | Confirmar que o diálogo bloqueia apagamento acidental |
-
-</details>
-
-<details>
-<summary><b>📄 Documento de Especificação de Requisitos de Software (SRS)</b></summary>
-
-Esboço condensado de SRS (estilo IEEE 830):
-
-1. **Introdução**
-   - *Propósito*: descrever o comportamento funcional e não funcional do app de desenho Doodlz.
-   - *Escopo*: app Android de atividade única para desenho livre, salvamento e impressão de imagens.
-   - *Definições*: ver [Requisitos de Domínio](#-requisitos-de-domínio).
-2. **Descrição Geral**
-   - *Perspectiva do produto*: app autônomo, sem backend, utiliza serviços do sistema Android (`SensorManager`, `MediaStore`, framework de impressão).
-   - *Características dos usuários*: usuários casuais de qualquer idade, sem necessidade de treinamento.
-   - *Restrições*: Java + Android SDK, sem bibliotecas externas (ver [Pilha de Tecnologias](#️-pilha-de-tecnologias)).
-3. **Requisitos Específicos**: ver [Requisitos Funcionais](#-requisitos-funcionais-rf), [Requisitos Não Funcionais](#️-requisitos-não-funcionais-rnf) e [Regras de Negócio](#-regras-de-negócio-rn).
-4. **Apêndices**: ver [Diagramas UML](#-diagrama-de-casos-de-uso), [Modelo de Dados](#️-diagrama-entidade-relacionamento-der) e [Arquitetura & UX](#️-diagrama-de-arquitetura-visão-geral) abaixo.
-
-</details>
+> [!NOTE]
+> Traços confirmados nunca são redesenhados sobre o `Bitmap` de apoio durante o desenho normal — `onDraw` reproduz a lista vetorial de `Path` diretamente sobre o `Canvas` passado pelo framework. O par `Bitmap`/`drawCanvas` existe especificamente para produzir um snapshot raster sob demanda em `getBitmap()`.
 
 ---
 
-### 🧩 Diagramas UML
+### 🎨 ColorDialogFragment — Seletor de Paleta
 
-<details>
-<summary><b>🧩 Diagrama de Casos de Uso</b></summary>
-
-```mermaid
-graph LR
-    User(("👤 Usuário"))
-    UC1(["Desenhar na Tela"])
-    UC2(["Selecionar Cor"])
-    UC3(["Ajustar Espessura"])
-    UC4(["Salvar Imagem"])
-    UC5(["Imprimir Imagem"])
-    UC6(["Apagar Tela"])
-    UC7(["Apagar ao Agitar"])
-    UCConfirm(["Confirmar Apagar"])
-
-    User --> UC1
-    User --> UC2
-    User --> UC3
-    User --> UC4
-    User --> UC5
-    User --> UC6
-    User --> UC7
-    UC6 -.include.-> UCConfirm
-    UC7 -.extend.-> UC6
-```
-
-</details>
-
-<details>
-<summary><b>🏗️ Diagrama de Classes</b></summary>
-
-```mermaid
-classDiagram
-    class MainActivity {
-        +onCreate()
-    }
-    class DoodleFragment {
-        -DoodleView doodleView
-        -SensorEventListenerHelper sensorHelper
-        +saveImage()
-        +printImage()
-        +eraseImage()
-    }
-    class DoodleView {
-        -Bitmap bitmap
-        -Canvas bitmapCanvas
-        -Paint paint
-        -HashMap~Integer,Path~ pathMap
-        -HashMap~Integer,Point~ previousPointMap
-        +onTouchEvent(MotionEvent)
-        +onDraw(Canvas)
-        +setDrawingColor(int)
-        +setLineWidth(int)
-        +clear()
-    }
-    class SensorEventListenerHelper {
-        -DoodleFragment doodleFragment
-        -float[] accelerometerValues
-        +onSensorChanged(SensorEvent)
-        +enable()
-        +disable()
-    }
-    class ColorDialogFragment {
-        +onCreateDialog()
-    }
-    class LineWidthDialogFragment {
-        +onCreateDialog()
-    }
-    class EraseImageDialogFragment {
-        +onCreateDialog()
-    }
-
-    MainActivity "1" --> "1" DoodleFragment
-    DoodleFragment "1" --> "1" DoodleView
-    DoodleFragment "1" --> "1" SensorEventListenerHelper
-    DoodleFragment ..> ColorDialogFragment
-    DoodleFragment ..> LineWidthDialogFragment
-    DoodleFragment ..> EraseImageDialogFragment
-```
-
-</details>
-
-<details>
-<summary><b>📦 Diagrama de Objetos</b></summary>
-
-Snapshot de uma instância de `DoodleView` durante o desenho, com dois dedos ativos:
-
-```mermaid
-graph TB
-    obj1["doodleView1 : DoodleView<br/>bitmap = Bitmap 1080x1920<br/>pathMap = {0 → path0, 1 → path1}"]
-    obj2["path0 : Path<br/>pointerId = 0<br/>color = #FF0000 (vermelho)"]
-    obj3["path1 : Path<br/>pointerId = 1<br/>color = #0000FF (azul)"]
-    obj1 --> obj2
-    obj1 --> obj3
-```
-
-</details>
-
-<details>
-<summary><b>🔁 Diagrama de Sequência</b></summary>
-
-Desenho de um único traço (um dedo, `ACTION_DOWN` → `ACTION_MOVE` → `ACTION_UP`):
-
-```mermaid
-sequenceDiagram
-    actor User as Usuário
-    participant View as DoodleView
-    participant Canvas as bitmapCanvas
-
-    User->>View: toque (ACTION_DOWN)
-    View->>View: cria Path para pointerId
-    User->>View: move dedo (ACTION_MOVE)
-    View->>Canvas: drawPath(path, paint)
-    View->>View: invalidate()
-    User->>View: levanta dedo (ACTION_UP)
-    View->>Canvas: drawPath(path, paint) [segmento final]
-    View->>View: pathMap.remove(pointerId)
-```
-
-</details>
-
-<details>
-<summary><b>💬 Diagrama de Comunicação</b></summary>
-
-Fluxo de mensagens para "Apagar ao Agitar" (numerado para mostrar a ordem):
-
-```mermaid
-graph LR
-    A[SensorEventListenerHelper] -->|"1: onSensorChanged()"| A
-    A -->|"2: limite de agitação excedido"| B[DoodleFragment]
-    B -->|"3: show()"| C[EraseImageDialogFragment]
-    C -->|"4: onClick SIM"| B
-    B -->|"5: eraseImage()"| D[DoodleView]
-    D -->|"6: clear() + invalidate()"| D
-```
-
-</details>
-
-<details>
-<summary><b>🏃 Diagrama de Atividades</b></summary>
-
-```mermaid
-flowchart TD
-    Start([Início]) --> Touch{Tipo de Evento de Toque}
-    Touch -->|ACTION_DOWN| NewPath[Criar novo Path para pointerId]
-    Touch -->|ACTION_MOVE| DrawLine[Estender Path / desenhar segmento]
-    Touch -->|ACTION_UP| FinishPath[Finalizar Path no Bitmap]
-    NewPath --> Render[invalidate da View]
-    DrawLine --> Render
-    FinishPath --> Render
-    Render --> End([Fim])
-```
-
-</details>
-
-<details>
-<summary><b>🔄 Diagrama de Máquina de Estados</b></summary>
-
-Estados de `DoodleView` em relação aos eventos de toque e apagar:
-
-```mermaid
-stateDiagram-v2
-    [*] --> Idle
-    Idle --> Drawing: ACTION_DOWN
-    Drawing --> Drawing: ACTION_MOVE
-    Drawing --> Idle: ACTION_UP
-    Idle --> Erasing: eraseImage() confirmado
-    Erasing --> Idle: bitmap limpo
-```
-
-</details>
-
-<details>
-<summary><b>🧱 Diagrama de Componentes</b></summary>
-
-```mermaid
-graph TB
-    subgraph UI_Layer["Camada de UI"]
-        MainActivity
-        DoodleFragment
-        ColorDialogFragment
-        LineWidthDialogFragment
-        EraseImageDialogFragment
-    end
-    subgraph Drawing_Engine["Motor de Desenho"]
-        DoodleView
-    end
-    subgraph Hardware_Integration["Integração com Hardware"]
-        SensorEventListenerHelper
-    end
-    subgraph Android_Services["Serviços do Sistema Android"]
-        MediaStore
-        PrintManager
-        SensorManager
-    end
-
-    DoodleFragment --> DoodleView
-    DoodleFragment --> SensorEventListenerHelper
-    SensorEventListenerHelper --> SensorManager
-    DoodleFragment --> MediaStore
-    DoodleFragment --> PrintManager
-```
-
-</details>
-
-<details>
-<summary><b>🚢 Diagrama de Implantação</b></summary>
-
-```mermaid
-graph TB
-    Dev["Máquina do Desenvolvedor<br/>(Android Studio + Gradle)"] -->|build & install do APK| APK
-
-    subgraph Device["📱 Dispositivo Android (Nó)"]
-        APK[Doodlz.apk]
-        App["Processo do App (ART Runtime)"]
-        Storage[("Armazenamento do Dispositivo / MediaStore")]
-        Sensors["Acelerômetro"]
-    end
-
-    APK --> App
-    App --> Storage
-    App --> Sensors
-```
-
-</details>
-
-<details>
-<summary><b>📦 Diagrama de Pacotes</b></summary>
-
-```mermaid
-graph TB
-    root["com.example.doodlz"]
-    root --> activity["MainActivity"]
-    root --> fragments["Fragments:<br/>DoodleFragment, ColorDialogFragment,<br/>LineWidthDialogFragment, EraseImageDialogFragment"]
-    root --> views["DoodleView"]
-    root --> sensors["SensorEventListenerHelper"]
-```
-
-</details>
-
-<details>
-<summary><b>🧬 Diagrama de Estrutura Composta</b></summary>
-
-Estrutura interna de `DoodleView`:
-
-```mermaid
-graph TB
-    subgraph DoodleView
-        bitmap["bitmap : Bitmap"]
-        canvas["bitmapCanvas : Canvas"]
-        paint["paint : Paint"]
-        pathMap["pathMap : HashMap&lt;Integer,Path&gt;"]
-        prevPoint["previousPointMap : HashMap&lt;Integer,Point&gt;"]
-
-        canvas -->|desenha sobre| bitmap
-        pathMap -->|renderizado com| paint
-        paint -->|aplicado via| canvas
-        prevPoint -->|suaviza| pathMap
-    end
-```
-
-</details>
-
-<details>
-<summary><b>🗺️ Diagrama de Visão Geral de Interação</b></summary>
-
-Mapa de alto nível de como os fragmentos de interação (sequência) se conectam:
-
-```mermaid
-graph LR
-    A[Iniciar App] --> B[Interação de Desenho]
-    B --> C{Ação do Usuário}
-    C -->|Mudar Cor| D[Interação de Diálogo de Cor]
-    C -->|Mudar Espessura| E[Interação de Diálogo de Espessura]
-    C -->|Salvar| F[Interação de Salvar Imagem]
-    C -->|Apagar / Agitar| G[Interação de Apagar]
-    D --> B
-    E --> B
-    F --> B
-    G --> B
-```
-
-</details>
-
-<details>
-<summary><b>⏱️ Diagrama de Tempo (Timing)</b></summary>
-
-Ciclo de vida do toque de um único dedo ao longo do tempo:
-
-```text
-Tempo        t0          t1          t2          t3          t4
-Dedo 0       DOWN ─────── MOVE ─────── MOVE ─────── MOVE ─────── UP
-pathMap[0]   criado ───── atualizado ─ atualizado ─ atualizado ─ removido
-Canvas       ocioso ────── drawPath ── drawPath ── drawPath ── drawPath (final)
-Estado View  Idle ───────  Drawing ─── Drawing ─── Drawing ───  Idle
-```
-
-</details>
+Um `DialogFragment` que hospeda uma grade `RecyclerView` de 5 colunas com 10 constantes `Color` fixas (`BLACK`, `RED`, `BLUE`, `GREEN`, `YELLOW`, `MAGENTA`, `CYAN`, `GRAY`, `DKGRAY`, `LTGRAY`). Tocar em uma amostra chama `changeColor()` no fragment pai e fecha o diálogo. `ColorAdapter`/`ColorViewHolder` seguem o padrão de adapter do RecyclerView.
 
 ---
 
-### 🗄️ Modelo de Dados
+### 📏 LineWidthDialogFragment — Ajuste de Espessura
+
+Um `DialogFragment` que envolve um `SeekBar` limitado por `R.dimen.max_line_width`, com piso em `R.dimen.default_line_width`. Toda chamada de `onProgressChanged` atualiza imediatamente o texto de preview ao vivo e chama `changeLineWidth()` no pai — a espessura se aplica em tempo real, não só ao fechar. `onStopTrackingTouch` fecha o diálogo.
+
+---
+
+### 🧹 EraseImageDialogFragment — Porta de Confirmação
+
+Um `DialogFragment` simples de Sim/Não. "Sim" chama `eraseDrawing()` no pai e fecha; "Não" apenas fecha. O título do diálogo é definido programaticamente como "Confirmar" em `onCreateDialog`.
+
+---
+
+### 📳 SensorEventListenerHelper — Detector de Chacoalhada
+
+Um singleton de escopo de processo (`getInstance(Context)`) que envolve o acelerômetro do aparelho.
+
+| Aspecto | Detalhe |
+|---------|---------|
+| Limiar | `SHAKE_THRESHOLD = 15f`, comparado contra `sqrt(x² + y² + z²)` |
+| Ciclo de vida | `start()`/`stop()` registram/desregistram o listener de forma idempotente via flag `isRunning` |
+| Callback | `ShakeListener.onShake()`, implementado por `DoodleFragment` |
+| Escopo | `getInstance` retém apenas o `applicationContext`, evitando vazamento de `Activity` |
+
+---
+
+</details>
+
+## 💼 Regras de Negócio
 
 <details>
-<summary><b>🗄️ Diagrama Entidade-Relacionamento (DER)</b></summary>
+<summary>▶️ <strong>Clique para expandir / recolher esta seção</strong></summary>
 
-O Doodlz não possui banco de dados relacional; o diagrama abaixo modela os **dados de runtime/exportados** em notação ER para completude da documentação.
+### ✏️ Regras de Desenho
+
+| # | Regra | Aplicação |
+|---|-------|-----------|
+| RN-01 | Um traço só começa em `ACTION_DOWN` | `currentPath = new Path(); currentPath.moveTo(...)` |
+| RN-02 | A cor e a espessura de um traço são fixadas no momento em que ele começa | `currentPaint = new Paint(drawPaint)` — uma cópia defensiva, não uma referência |
+| RN-03 | Um traço só é confirmado no histórico em `ACTION_UP` | `strokes.add(new Stroke(currentPath, currentPaint))` |
+| RN-04 | Mudar cor ou espessura nunca altera traços já confirmados | `Stroke` guarda sua própria cópia de `Paint`, independente de `drawPaint` |
+| RN-05 | O canvas redesenha todo o histórico mais o traço em andamento a cada quadro | `onDraw` itera `strokes` e depois desenha `currentPath` se não for nulo |
+
+### 💬 Regras de Diálogo
+
+| # | Regra | Aplicação |
+|---|-------|-----------|
+| RN-06 | Apenas um diálogo modal pode estar aberto por vez | Cada diálogo é `setCancelable(false)` e deve ser fechado explicitamente |
+| RN-07 | Uma chacoalhada com um diálogo aberto não deve limpar o canvas | Guarda `dialogOnScreen` em `onShake()` |
+| RN-08 | Abrir qualquer diálogo define a guarda; qualquer caminho de fechamento a limpa | `openXDialog()` define `true`; `changeColor`/`changeLineWidth`/`eraseDrawing` definem `false` |
+
+### 💾 Regras de Salvamento & Impressão
+
+| # | Regra | Aplicação |
+|---|-------|-----------|
+| RN-09 | Arquivos salvos são nomeados `Doodlz_<epochMillis>.png` | `saveImage()` |
+| RN-10 | Arquivos salvos sempre caem em `Pictures/Doodlz` | `RELATIVE_PATH` no `ContentValues` |
+| RN-11 | A permissão de armazenamento é solicitada apenas abaixo da API 29 | Guarda `Build.VERSION.SDK_INT <= Build.VERSION_CODES.P` |
+| RN-12 | Uma falha ao salvar não deve derrubar o aplicativo | `try/catch` ao redor da inserção e compressão no `MediaStore`, com toast em caso de falha |
+| RN-13 | A impressão usa a mesma lógica de bitmap do salvamento | Ambos chamam `doodleView.getBitmap()` |
+
+---
+
+</details>
+
+## ✅ Requisitos Funcionais
+
+<details>
+<summary>▶️ <strong>Clique para expandir / recolher esta seção</strong></summary>
+
+| ID | Requisito | Prioridade | Status |
+|----|-----------|------------|--------|
+| **RF-01** | O sistema deve permitir que o usuário desenhe traços livres com o dedo | 🔴 Alta | ✅ Implementado |
+| **RF-02** | O sistema deve oferecer uma paleta de 10 cores predefinidas | 🔴 Alta | ✅ Implementado |
+| **RF-03** | O sistema deve permitir ajuste ao vivo da espessura do traço | 🔴 Alta | ✅ Implementado |
+| **RF-04** | O sistema deve preservar a cor/espessura de traços já desenhados | 🔴 Alta | ✅ Implementado |
+| **RF-05** | O sistema deve limpar o canvas após um apagar confirmado | 🔴 Alta | ✅ Implementado |
+| **RF-06** | O sistema deve limpar o canvas ao detectar uma chacoalhada do aparelho | 🟡 Média | ✅ Implementado |
+| **RF-07** | O sistema deve suprimir a limpeza por chacoalhada enquanto um diálogo está aberto | 🟡 Média | ✅ Implementado |
+| **RF-08** | O sistema deve salvar o desenho como PNG na galeria pública | 🔴 Alta | ✅ Implementado |
+| **RF-09** | O sistema deve solicitar permissão de armazenamento apenas em Android legado | 🟡 Média | ✅ Implementado |
+| **RF-10** | O sistema deve imprimir o desenho via o serviço de impressão do sistema | 🟡 Média | ✅ Implementado |
+| **RF-11** | O sistema deve notificar o usuário sobre sucesso e falha ao salvar | 🟢 Baixa | ✅ Implementado |
+| **RF-12** | O sistema deve notificar o usuário sobre falha ao imprimir | 🟢 Baixa | ✅ Implementado |
+| **RF-13** | O sistema deve apresentar a confirmação de apagar antes de limpar | 🟡 Média | ✅ Implementado |
+| **RF-14** | O sistema deve renderizar o seletor de espessura com um rótulo numérico ao vivo | 🟢 Baixa | ✅ Implementado |
+
+---
+
+</details>
+
+## ⚡ Requisitos Não Funcionais
+
+<details>
+<summary>▶️ <strong>Clique para expandir / recolher esta seção</strong></summary>
+
+| ID | Categoria | Requisito | Meta |
+|----|-----------|-----------|------|
+| **RNF-01** | ⚡ Desempenho | Latência de toque até desenho | < 16 ms por quadro (60 fps) |
+| **RNF-02** | 🧠 Memória | Histórico de traços em uma sessão típica | Limitado pela RAM do aparelho; sem teto explícito definido |
+| **RNF-03** | 📱 Compatibilidade | Faixa de versões do Android | API 21 → API 34 |
+| **RNF-04** | 🔋 Bateria | O listener do acelerômetro roda apenas com o fragment em resume | `onPause` chama `stop()` |
+| **RNF-05** | 🎨 Usabilidade | O preview de espessura atualiza sem exigir fechar o diálogo | Callback ao vivo do `SeekBar` |
+| **RNF-06** | 🔐 Privacidade | Nenhuma permissão de rede declarada | Os desenhos nunca saem do aparelho por este app |
+| **RNF-07** | 🧱 Manutenibilidade | Classes de propósito único, sem estáticos mutáveis compartilhados além do singleton do sensor | 8 arquivos Java pequenos |
+| **RNF-08** | 🖨️ Interoperabilidade | A impressão funciona com qualquer serviço de impressão registrado no sistema | `androidx.print.PrintHelper` |
+
+---
+
+</details>
+
+## 🗄️ Modelo de Dados
+
+<details>
+<summary>▶️ <strong>Clique para expandir / recolher esta seção</strong></summary>
+
+> [!NOTE]
+> O Doodlz não tem banco de dados. Seu modelo de dados é o histórico de traços em memória mais o registro do MediaStore produzido ao salvar.
+
+### Diagrama Entidade-Relacionamento
 
 ```mermaid
 erDiagram
-    DRAWING_SESSION ||--o{ STROKE : contains
-    DRAWING_SESSION ||--o| EXPORTED_IMAGE : "exported as"
+    DOODLE_VIEW ||--o{ STROKE : "possui histórico de"
+    DOODLE_VIEW ||--o| CURRENT_PATH : "mantém em andamento"
+    STROKE ||--|| PATH : "envolve"
+    STROKE ||--|| PAINT_SNAPSHOT : "envolve"
+    DOODLE_VIEW ||--o| MEDIASTORE_IMAGE : "exporta para"
 
-    DRAWING_SESSION {
-        string sessionId
-        datetime startedAt
+    DOODLE_VIEW {
+        Bitmap bitmap "apoio raster do snapshot"
+        List_Stroke strokes "histórico de desenho confirmado"
+        Path currentPath "anulável, traço em andamento"
+        Paint currentPaint "anulável, tinta em andamento"
     }
+
     STROKE {
-        int pointerId
-        string colorHex
-        float widthPx
-        string pathData
+        Path path "geometria vetorial"
+        Paint paint "cópia defensiva no momento da criação"
     }
-    EXPORTED_IMAGE {
-        string uri
-        string displayName
-        string mimeType
-        datetime dateAdded
+
+    MEDIASTORE_IMAGE {
+        string DISPLAY_NAME "Doodlz_epochMillis.png"
+        string MIME_TYPE "image/png"
+        string RELATIVE_PATH "Pictures/Doodlz"
     }
 ```
 
-</details>
+### Padrões de Pintura
 
-<details>
-<summary><b>💡 Modelo Conceitual de Dados</b></summary>
-
-No nível conceitual, uma **Sessão de Desenho** é composta por um ou mais **Traços** (um por gesto de dedo) e pode gerar uma **Imagem Exportada**.
-
-```mermaid
-graph LR
-    DS[Sessão de Desenho] -->|composta por| ST[Traço]
-    DS -->|exportada como| IMG[Imagem Exportada]
-```
-
-</details>
-
-<details>
-<summary><b>🧮 Modelo Lógico de Dados</b></summary>
-
-| Entidade | Campo | Tipo | Descrição |
-|:-------|:------|:-----|:------------|
-| Stroke (Traço) | pointerId | Integer | Identifica o dedo que desenhou o traço |
-| Stroke (Traço) | colorHex | String(8) | Cor do traço (ARGB) |
-| Stroke (Traço) | widthPx | Float | Espessura do traço em pixels |
-| Stroke (Traço) | pathData | Path (em memória) | Sequência de segmentos de linha/curva |
-| ExportedImage | uri | String | URI de conteúdo do `MediaStore` |
-| ExportedImage | displayName | String | Nome do arquivo exibido na galeria |
-| ExportedImage | mimeType | String | `image/png` |
-| ExportedImage | dateAdded | DateTime | Timestamp da exportação |
-
-</details>
-
-<details>
-<summary><b>⚙️ Modelo Físico de Dados</b></summary>
-
-O único dado fisicamente persistido é o PNG exportado, armazenado via `MediaStore.Images.Media` com as colunas abaixo:
-
-| Coluna | Tipo | Observações |
-|:-------|:-----|:------|
-| `DISPLAY_NAME` | TEXT | Nome do arquivo (ex.: `doodlz_<timestamp>.png`) |
-| `MIME_TYPE` | TEXT | `image/png` |
-| `RELATIVE_PATH` / `DATA` | TEXT | Caminho de armazenamento (diretório Pictures) |
-| `DATE_ADDED` | INTEGER (Unix time) | Definido automaticamente pelo `MediaStore` |
-
-Todos os demais dados (`bitmap`, `pathMap`, `previousPointMap`, cor/espessura atuais) existem apenas em memória do processo (campos da instância `DoodleView`) e são descartados ao fechar o app.
-
-</details>
-
-<details>
-<summary><b>📖 Dicionário de Dados</b></summary>
-
-| Campo | Tipo | Escopo | Descrição |
-|:------|:-----|:------|:------------|
-| `bitmap` | `Bitmap` | `DoodleView` (memória) | Superfície raster contendo todos os traços confirmados |
-| `bitmapCanvas` | `Canvas` | `DoodleView` (memória) | Canvas associado ao `bitmap`, usado pelo `Paint` para desenhar |
-| `paint` | `Paint` | `DoodleView` (memória) | Pincel atual: cor, espessura, estilo |
-| `pathMap` | `HashMap<Integer, Path>` | `DoodleView` (memória) | Traços ativos indexados por `pointerId` |
-| `previousPointMap` | `HashMap<Integer, Point>` | `DoodleView` (memória) | Último ponto conhecido de cada dedo, para suavização |
-| `SHAKE_THRESHOLD` | `float` (constante) | `SensorEventListenerHelper` | Aceleração mínima para disparar o apagar |
-| `DISPLAY_NAME` | `String` | `MediaStore` (persistido) | Nome do arquivo de imagem exportado |
-| `MIME_TYPE` | `String` | `MediaStore` (persistido) | Tipo MIME da imagem exportada (`image/png`) |
-
-</details>
-
-<details>
-<summary><b>🔀 Diagrama de Fluxo de Dados (DFD)</b></summary>
-
-```mermaid
-flowchart LR
-    Finger(("👆 Entrada de Toque")) --> P1[/"Capturar MotionEvent"/]
-    P1 --> P2[/"Atualizar Path & desenhar no Bitmap"/]
-    P2 --> DS1[("Bitmap - raster em memória")]
-    DS1 --> P3[/"Exportar para PNG"/]
-    P3 --> ES1[["MediaStore / Galeria"]]
-    DS1 --> P4[/"Renderizar para impressão"/]
-    P4 --> ES2[["Framework de Impressão do Android"]]
-```
-
-</details>
-
-<details>
-<summary><b>🧵 Diagrama de Linhagem de Dados</b></summary>
-
-Como um único toque se transforma em uma imagem salva:
-
-```mermaid
-flowchart LR
-    A["Coordenadas brutas do toque<br/>(x, y, pointerId)"] --> B["MotionEvent"]
-    B --> C["Segmentos de Path<br/>(lineTo / quadTo)"]
-    C --> D["Desenhado no bitmapCanvas<br/>(Bitmap)"]
-    D --> E["Bitmap.compress(PNG)"]
-    E --> F["Entrada em MediaStore.Images"]
-    F --> G["Visível na Galeria do Dispositivo"]
-```
-
-</details>
+| Propriedade | Valor | Origem |
+|-------------|-------|--------|
+| Cor inicial | `Color.BLACK` | Padrão do campo `paintColor` |
+| Espessura inicial | `R.dimen.default_line_width` | `dimens.xml` |
+| Espessura máxima | `R.dimen.max_line_width` | `dimens.xml`, limita o `SeekBar` |
+| Estilo | `Paint.Style.STROKE` | `init()` |
+| Junção / Ponta | `ROUND` / `ROUND` | `init()` — cantos suaves à mão livre |
+| Anti-aliasing | habilitado | `init()` |
 
 ---
 
-### 🏛️ Arquitetura & UX
-
-<details>
-<summary><b>🏛️ Diagrama de Arquitetura (Visão Geral)</b></summary>
-
-```mermaid
-graph TB
-    subgraph Presentation["Camada de Apresentação"]
-        MA[MainActivity]
-        DF[DoodleFragment]
-        Dialogs["Dialog Fragments:<br/>Cor / Espessura / Apagar"]
-    end
-    subgraph Engine["Camada do Motor de Desenho"]
-        DV["DoodleView (Custom View)"]
-    end
-    subgraph HAL["Abstração de Hardware"]
-        SH[SensorEventListenerHelper]
-    end
-    subgraph Framework["Android Framework / OS"]
-        Canvas2D["Canvas, Bitmap, Paint, Path"]
-        SensorMgr[SensorManager]
-        MediaStoreApi[MediaStore]
-        PrintApi[PrintManager]
-    end
-
-    MA --> DF
-    DF --> Dialogs
-    DF --> DV
-    DF --> SH
-    DV --> Canvas2D
-    SH --> SensorMgr
-    DF --> MediaStoreApi
-    DF --> PrintApi
-```
-
 </details>
 
-<details>
-<summary><b>🔀 Fluxograma</b></summary>
+## 🔄 Fluxos do Sistema
 
-Fluxo de navegação do app:
+<details>
+<summary>▶️ <strong>Clique para expandir / recolher esta seção</strong></summary>
+
+### Fluxo de Captura de Traço
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant U as 👤 Usuário
+    participant V as ⚙️ DoodleView
+    U->>V: ACTION_DOWN em (x,y)
+    V->>V: currentPath = new Path(); moveTo(x,y)
+    V->>V: currentPaint = cópia de drawPaint
+    loop dedo se movendo
+        U->>V: ACTION_MOVE
+        V->>V: currentPath.lineTo(x,y)
+        V->>V: invalidate()
+        V-->>U: onDraw redesenha histórico + currentPath
+    end
+    U->>V: ACTION_UP
+    V->>V: strokes.add(new Stroke(currentPath, currentPaint))
+    V->>V: currentPath = null
+```
+
+### Fluxo de Salvamento
 
 ```mermaid
 flowchart TD
-    Start([Início do App]) --> Main[Tela Principal de Desenho]
-    Main -->|Menu: Cor| ColorDlg[Diálogo de Cor]
-    Main -->|Menu: Espessura| WidthDlg[Diálogo de Espessura]
-    Main -->|Menu: Apagar| EraseDlg{Confirmar?}
-    Main -->|Agitar dispositivo| EraseDlg
-    Main -->|Menu: Salvar| Save[Salvar na Galeria]
-    Main -->|Menu: Imprimir| Print[Diálogo de Impressão]
-    ColorDlg -->|Selecionar cor| Main
-    WidthDlg -->|Ajustar espessura| Main
-    EraseDlg -->|Sim| Clear[Limpar Tela]
-    EraseDlg -->|Cancelar| Main
-    Clear --> Main
-    Save --> Main
-    Print --> Main
+    A([Usuário toca em Salvar]) --> B[getBitmap do DoodleView]
+    B --> C[Monta ContentValues:<br/>nome, mime PNG, caminho Pictures/Doodlz]
+    C --> D[insere em MediaStore.Images.Media]
+    D --> E{Uri retornada?}
+    E -- Não --> F[Lança + captura → toast save_error]
+    E -- Sim --> G[Abre OutputStream na Uri]
+    G --> H[bitmap.compress PNG 100]
+    H --> I{Sucesso?}
+    I -- Não --> F
+    I -- Sim --> J[Toast save_success]
+
+    style A fill:#1565C0,color:#fff
+    style J fill:#2E7D32,color:#fff
+    style F fill:#B71C1C,color:#fff
 ```
 
-</details>
+### Fluxo de Limpeza por Chacoalhada
 
-<details>
-<summary><b>🙋 Persona</b></summary>
+```mermaid
+flowchart TD
+    S([Evento do acelerômetro]) --> M[magnitude = sqrt x²+y²+z²]
+    M --> T{magnitude ><br/>SHAKE_THRESHOLD 15f?}
+    T -- Não --> S
+    T -- Sim --> CB[shakeListener.onShake]
+    CB --> G{dialogOnScreen?}
+    G -- Sim --> IGNORE([Ignorado])
+    G -- Não --> CLEAR[doodleView.clear]
+    CLEAR --> RD[invalidate → canvas em branco]
 
-| | Persona 1 | Persona 2 |
-|:--|:----------|:----------|
-| **Nome** | Ana, 8 anos | Carlos, 34 anos |
-| **Papel** | Criança, desenhista casual | Professor |
-| **Objetivo** | Desenhar livremente com os dedos, ver cores vibrantes, salvar desenhos para mostrar à família | Esboçar rapidamente um diagrama no tablet para ilustrar um conceito em aula |
-| **Familiaridade com tecnologia** | Baixa — precisa de botões grandes e óbvios | Média — confortável com menus |
-| **Dores** | Apagar um desenho acidentalmente | Linhas muito finas para ver do fundo da sala |
-| **Como o Doodlz ajuda** | Apagar ao agitar é divertido, o diálogo de confirmação evita perdas acidentais | O slider de espessura permite traços grossos e visíveis, com salvar/imprimir instantâneos |
-
-</details>
-
-<details>
-<summary><b>🧭 Mapa de Jornada do Usuário</b></summary>
-
-| Etapa | Ação | Pensamento do Usuário | Emoção | Ponto de Dor | Oportunidade |
-|:------|:-------|:--------------|:--------|:-----------|:-------------|
-| 1. Abertura | Abre o app | "Vamos ver o que isso faz" | 🙂 Curioso | — | Tela limpa exibida imediatamente |
-| 2. Desenho | Toca e arrasta os dedos | "Posso desenhar com mais de um dedo!" | 😄 Encantado | Atraso frustraria | Renderização suave em tempo real |
-| 3. Personalização | Abre diálogos de cor/espessura | "Quero uma linha vermelha mais grossa" | 🙂 Engajado | Muitas opções poderiam confundir | Paleta simples + slider |
-| 4. Salvar | Toca em Salvar | "Quero guardar isso" | 😊 Satisfeito | Permissão ausente bloqueia o salvamento | Prompt de permissão claro |
-| 5. Apagar | Agita o dispositivo ou toca em Apagar | "Vou começar de novo" | 😟 Ansioso (medo de perder o trabalho) | Agitação acidental apaga tudo | Diálogo de confirmação |
-
-</details>
-
-<details>
-<summary><b>📐 Wireframe</b></summary>
-
-Layout de baixa fidelidade da tela principal de desenho:
-
-```text
-┌──────────────────────────────────────────┐
-│ ☰  Doodlz                          ⋮ Menu │
-├──────────────────────────────────────────┤
-│                                            │
-│                                            │
-│                                            │
-│              (Tela de Desenho)            │
-│                                            │
-│                                            │
-│                                            │
-│                                            │
-├──────────────────────────────────────────┤
-│ [🎨 Cor]  [〰️ Espessura]  [🗑️ Apagar]  [💾 Salvar] │
-└──────────────────────────────────────────┘
+    style S fill:#1565C0,color:#fff
+    style RD fill:#2E7D32,color:#fff
+    style IGNORE fill:#6A1B9A,color:#fff
 ```
 
+---
+
 </details>
+
+## 🔐 Segurança
 
 <details>
-<summary><b>🖼️ Mockup</b></summary>
+<summary>▶️ <strong>Clique para expandir / recolher esta seção</strong></summary>
 
-Descrição de alta fidelidade da tela principal e do diálogo de cores:
+### Controles Implementados
 
-```text
-┌──────────────────────────────────────────┐
-│ ☰  Doodlz                  🎨 〰️ 🗑️ 💾 🖨️ ⋮ │  ← Barra escura (#212121)
-├──────────────────────────────────────────┤
-│  Tela branca (#FFFFFF)                    │
-│                                            │
-│   ╭───╮          ╭──────╮                 │
-│   │   ╰──────────╯      ╲                 │
-│   │  traço vermelho (#F44336) ╲            │
-│   ╰────────────╮            ╲             │
-│                 ╲  traço azul (#2196F3)    │
-│                  ╰─────────────────       │
-│                                            │
-└──────────────────────────────────────────┘
+| Controle | Implementação | Efeito |
+|----------|---------------|--------|
+| 🔐 **Armazenamento escopado** | Inserção via `MediaStore` em todos os níveis de API suportados | Não exige acesso amplo ao sistema de arquivos na API 29+ |
+| 🚦 **Solicitação de permissão só no legado** | Guarda `SDK_INT <= P` | Evita solicitar permissões que a plataforma não concede mais de forma significativa |
+| ✅ **Validação de resultado** | `if (uri == null) throw` e verificação do resultado da compressão | Um salvamento falho não pode corromper o estado silenciosamente |
+| 🌐 **Sem permissão de rede** | `INTERNET` ausente do manifesto | Os desenhos não podem sair do aparelho por este app |
+| 📵 **Sem SDK de terceiros** | Apenas AndroidX + Material | Nenhuma saída de dados para analytics ou anúncios |
 
-Diálogo de Cor (grade RecyclerView):
-┌───────────────────────────┐
-│ 🟥 🟧 🟨 🟩 🟦 🟪 ⬛ ⬜      │
-│ Selecione a cor do pincel    │
-│        [ OK ]  [ Cancelar ] │
-└───────────────────────────┘
+### Limitações de Segurança Conhecidas
+
+> [!WARNING]
+> Ressalvas da mesma categoria de qualquer pequeno app de demonstração Android; entenda-as antes de reutilizar.
+
+| Limitação | Risco | Caminho de mitigação |
+|-----------|-------|----------------------|
+| 🗂️ **Armazenamento em galeria pública** | Qualquer app que leia a galeria pode ver os desenhos salvos | Usar armazenamento privado do app se a confidencialidade importar |
+| 🔁 **Negação permanente não detectada** | Permissão negada em Android legado não mostra justificativa, apenas um toast | Adicionar tratamento com `shouldShowRequestPermissionRationale` |
+| 🧬 **Build de release sem minificação** | `isMinifyEnabled = false` | Habilitar R8 para builds de release |
+| 🪵 **Log de depuração deixado no lugar** | `SensorEventListenerHelper` registra os valores brutos dos eixos a cada leitura do sensor | Remover ou proteger atrás de uma flag de debug antes de publicar |
+
+---
+
+</details>
+
+## 🚀 Instalação & Execução
+
+<details>
+<summary>▶️ <strong>Clique para expandir / recolher esta seção</strong></summary>
+
+### Pré-requisitos
+
+```bash
+java -version          # JDK 17+
+sdkmanager "platforms;android-34" "build-tools;34.0.0"
+adb devices             # confirme que há um dispositivo ou emulador conectado
 ```
+
+### Build
+
+```bash
+./gradlew assembleDebug      # app/build/outputs/apk/debug/app-debug.apk
+./gradlew assembleRelease
+./gradlew clean
+./gradlew build               # compilação + lint + testes unitários
+```
+
+### Execução
+
+```bash
+./gradlew installDebug
+adb shell am start -n com.example.doodlz/.MainActivity
+```
+
+**Uso**
+
+1. Desenhe com o dedo em qualquer lugar do canvas.
+2. Toque em **Cor** para escolher na grade de 10 amostras.
+3. Toque em **Espessura** e arraste o slider para redimensionar o traço.
+4. Toque em **Limpar** e confirme para apagar, ou chacoalhe o aparelho.
+5. Toque em **Salvar** para gravar um PNG em `Pictures/Doodlz`.
+6. Toque em **Imprimir** para enviar o desenho a um serviço de impressão do sistema.
+
+### Alvos do Gradle
+
+| Alvo | Finalidade |
+|------|------------|
+| `./gradlew assembleDebug` | Gerar o APK de debug |
+| `./gradlew installDebug` | Compilar e instalar no dispositivo conectado |
+| `./gradlew test` | Executar testes unitários na JVM |
+| `./gradlew connectedAndroidTest` | Executar testes instrumentados em um dispositivo |
+| `./gradlew lint` | Análise estática |
+
+---
+
+</details>
+
+## 🧪 Testes Automatizados
+
+<details>
+<summary>▶️ <strong>Clique para expandir / recolher esta seção</strong></summary>
+
+### Arquitetura de Testes
+
+```mermaid
+flowchart TB
+    subgraph LOCAL["🖥️ Unitário — src/test"]
+        U1["ExampleUnitTest.kt\nJVM, sem framework Android"]
+    end
+    subgraph INSTR["📱 Instrumentado — src/androidTest"]
+        I1["ExampleInstrumentedTest.kt\nDispositivo/emulador, Espresso"]
+    end
+    U1 --> R1["JUnit 4"]
+    I1 --> R2["AndroidJUnitRunner + Espresso"]
+    style LOCAL fill:#1e3a5f,color:#fff
+    style INSTR fill:#1a3a1a,color:#fff
+```
+
+### Executando os Testes
+
+```bash
+./gradlew test
+./gradlew connectedAndroidTest
+```
+
+### Checklist Manual de Aceitação
+
+| # | Cenário | Resultado esperado |
+|---|---------|---------------------|
+| 1 | Desenhar um traço, mudar de cor, desenhar outro | O primeiro traço mantém sua cor original |
+| 2 | Ajustar a espessura no meio da sessão | Novos traços refletem a nova espessura, os antigos ficam inalterados |
+| 3 | Chacoalhar sem diálogo aberto | O canvas se limpa |
+| 4 | Chacoalhar com um diálogo aberto | O canvas permanece intocado |
+| 5 | Salvar | O arquivo aparece em `Pictures/Doodlz`, o toast confirma |
+| 6 | Imprimir | O diálogo de impressão do sistema abre com o desenho |
+| 7 | Negar permissão de armazenamento (API ≤ 28) | Toast informa a negação, o salvamento falha graciosamente |
+
+---
+
+</details>
+
+## 📊 Métricas & Monitoramento
+
+<details>
+<summary>▶️ <strong>Clique para expandir / recolher esta seção</strong></summary>
+
+| Métrica | Valor |
+|---------|-------|
+| Classes Java | 8 |
+| Fragments | 4 (1 principal + 3 diálogos) |
+| Cores predefinidas | 10 |
+| Limiar de chacoalhada | 15f (magnitude equivalente a m/s²) |
+| SDK Mínimo / Alvo / Compilação | 21 / 34 / 34 |
+| Dependências diretas | 9 de implementação + 3 de teste |
+
+### Comandos de Diagnóstico
+
+```bash
+adb logcat --pid=$(adb shell pidof -s com.example.doodlz)
+adb shell ls -l /sdcard/Pictures/Doodlz/
+```
+
+---
+
+</details>
+
+## ⚠️ Limitações Conhecidas
+
+<details>
+<summary>▶️ <strong>Clique para expandir / recolher esta seção</strong></summary>
+
+> [!IMPORTANT]
+> Construído como demonstração educacional de desenho customizado em `View`, composição de `Fragment` e interação orientada por sensor.
+
+| Categoria | Problema | Status |
+|-----------|----------|--------|
+| ↩️ **Sem desfazer/refazer** | Remover o último traço exige uma limpeza completa | ⚠️ Aberto — remover o último elemento de `strokes` |
+| 🪵 **Log de sensor verboso** | Cada leitura do acelerômetro é registrada em `Log.i` | ⚠️ Aberto — remover ou proteger para release |
+| 🧬 **Release sem minificação** | `isMinifyEnabled = false` | ⚠️ Aberto — habilitar R8 |
+| 🧪 **Sem cobertura de testes customizada** | Só existem os testes de exemplo gerados | ⚠️ Aberto — adicionar testes para a imutabilidade de `Stroke` e o limiar de chacoalhada |
+| 📱 **Sem salvamento de estado na rotação** | O desenho se perde se o fragment for recriado na rotação | ⚠️ Aberto — persistir os traços entre mudanças de configuração |
 
 </details>
 
 ---
 
-## 🤝 Como Contribuir
-
-> Contribuições são muito bem-vindas! Siga as etapas abaixo para colaborar de forma organizada.
-
-| Passo | Ação | Comando |
-|:-----:|:-----|:--------|
-| 1️⃣ | **Fork** | Crie um fork do repositório para a sua conta. | — |
-| 2️⃣ | **Branch** | Crie sua feature branch a partir da `main`. | `git checkout -b feature/NovaFeature` |
-| 3️⃣ | **Commit** | Salve as alterações com mensagem clara e semântica. | `git commit -m 'feat: Adiciona NovaFeature'` |
-| 4️⃣ | **Push** | Envie a branch para o repositório remoto. | `git push origin feature/NovaFeature` |
-| 5️⃣ | **Pull Request** | Abra um PR detalhando as mudanças realizadas. | — |
-
 <div align="center">
-
-<br>
-
-**Se este projeto foi útil para os seus estudos, deixe uma estrela ⭐️ no repositório!**
-
-</div>
 
 ---
 
-## 👨‍💻 Autor
+### 🎨 Doodlz
 
-<div align="center">
+*Cada traço lembra de que cor nasceu*
 
-<br>
+[![Android](https://img.shields.io/badge/Feito%20com-Android%20SDK-3DDC84?style=flat-square&logo=android&logoColor=white)](https://developer.android.com/)
+[![Java](https://img.shields.io/badge/Escrito%20em-Java%2017-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://openjdk.org/)
+[![Canvas](https://img.shields.io/badge/Renderização-Path%20%2B%20Paint-FF6B35?style=flat-square)]()
 
-**Victor H. J. Santiago**
+<br/>
 
-<br>
-
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/VictorHJesusSantiago)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/victor-henrique-de-jesus-santiago/)
-
-</div>
-
----
-
-## 📄 Licença
-
-<div align="center">
-
-Este projeto está distribuído sob a **Licença MIT**.
-Consulte o arquivo [`LICENSE`](./LICENSE) no repositório para mais informações.
-
-![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
-
-</div>
-
----
-
-<div align="center">
-
-*Feito com 🎨 e Java por **Victor H. J. Santiago***
+```
+"Um canvas que nunca esquece de que cor cada linha nasceu."
+```
 
 </div>
